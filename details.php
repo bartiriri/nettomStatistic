@@ -13,22 +13,24 @@
     <div class="row text-center justify-content-center shadow rounded">
         <h4>Search by date</h4>
         <div class="col-lg-3">
-            <input type="date">
+            <label>From:</label>
+            <input id="details_from" type="date" max='<?php echo date("Y-m-d") ?>'>
         </div>
         <div class="col-lg-3">
-            <input type="date">
+            <label>To:</label>
+            <input id="details_to" type="date" max='<?php echo date("Y-m-d") ?>'>
         </div>
         <div class="col-lg-3 mb-1">
-            <button class="btn btn-primary">Search</button>
+            <button id="details_search" class="btn btn-primary">Search</button>
         </div>
 
     </div>
     <div class="row shadow mt-4 rounded">
         <div class="col text-center pt-2 pb-2">
-            Data show from begin to now
+            Data show from <strong>begin</strong> to <strong>now</strong>
         </div>
-        <div class="col text-center">
-
+        <div class="col text-center pt-2">
+            Unique entry : <strong>20</strong>
         </div>
     </div>
     <div class="row shadow mt-4 rounded pt-2 pb-2">
@@ -62,6 +64,7 @@
 <script>
     $(document).ready(function() {
         $('#tabela').DataTable();
+        VALID_DATE_FORM.detailsForm();
     } );
 </script>
 

@@ -16,17 +16,17 @@
         </div>
         <div class="col text-center pt-2">
             <strong>Search by date</strong><br>
-            <label>From</label>
-            <div><input type="date"></div>
-            <label>To</label>
-            <div><input type="date"></div>
-            <div><button class="btn btn-primary mt-1">Filtruj</button></div>
+            <label>From:</label>
+            <div><input id="index_from" type="date" max='<?php echo date("Y-m-d") ?>'></div>
+            <label>To:</label>
+            <div><input id="index_to" type="date" max='<?php echo date("Y-m-d") ?>'></div>
+            <div><button id="index_search" class="btn btn-primary mt-1">Search</button></div>
         </div>
     </div>
 
 
-
-<table id="tabela">
+<div class="row shadow mt-4 rounded pt-2 pb-2">
+<table id="tabela" class="stripe">
     <thead>
     <tr>
         <td>Lp.</td>
@@ -44,12 +44,24 @@
         <td>100</td>
         <td><a  href="details.php"><img src="image/list-action.png"/></a></td>
     </tr>
+    <tr>
+        <td>2.</td>
+        <td>Strona główna</td>
+        <td>100</td>
+        <td><a  href="details.php"><img src="image/list-action.png"/></a></td>
+    </tr>
+    <tr>
+        <td>3.</td>
+        <td>Strona główna</td>
+        <td>100</td>
+        <td><a  href="details.php"><img src="image/list-action.png"/></a></td>
+    </tr>
 
 
     </tbody>
 
 </table>
-
+</div>
 
 </div>
 
@@ -57,6 +69,7 @@
 <script>
     $(document).ready(function() {
         $('#tabela').DataTable();
+        VALID_DATE_FORM.indexForm();
     } );
 </script>
 
